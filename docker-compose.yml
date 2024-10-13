@@ -3,7 +3,7 @@ version: '3.8'
 services:
   backend:
     build:
-      context: ../maple-orders-api
+      context: ../sugar-shack-app/maple-orders-api
       dockerfile: ../maple-orders-api/Dockerfile
     container_name: maple-orders-api-full
     environment:
@@ -17,7 +17,7 @@ services:
 
   frontend:
     build:
-      context: ../sugar-shack-ui
+      context: ../sugar-shack-app/sugar-shack-ui
       dockerfile: ../sugar-shack-ui/Dockerfile
     container_name: sugar-shack-ui-full
     ports:
