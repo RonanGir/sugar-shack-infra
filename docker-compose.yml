@@ -21,7 +21,7 @@ services:
       dockerfile: ../sugar-shack-ui/Dockerfile
     container_name: sugar-shack-ui-full
     ports:
-      - "4220:80"
+      - "4200:80"
 
   db:
     image: postgres:17
@@ -37,3 +37,7 @@ services:
 
 volumes:
   postgres-data:
+
+networks:
+  default:
+    driver: bridge
