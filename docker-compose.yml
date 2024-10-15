@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  backend:
+  orders-api:
     build:
       context: ../sugar-shack-app/maple-orders-api
       dockerfile: ../maple-orders-api/Dockerfile
     container_name: maple-orders-api-full
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/sugar_shack_maplr_test
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://host.docker.internal:5433/sugar_shack_maplr_test
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
     ports:
@@ -31,7 +31,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
